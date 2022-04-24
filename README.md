@@ -1,5 +1,5 @@
 # JsonFileChange v1.0.0
-Module for deno, to set, get and delete content of json file
+Module for deno, load, set, get and delete content of json file
 
 # Import
 ```typescript
@@ -53,6 +53,3 @@ Delete key if exist
 ```typescript
 _c.delete("appTitle")
 ```
-#Ret
-
-
