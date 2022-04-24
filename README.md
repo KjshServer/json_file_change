@@ -14,6 +14,7 @@ _c.load(`${Deno.cwd()}/src/config/config.json`)
 
 # Set
 insert or update data in json file
+maximum keys object 4
 ```typescript
 _c.set("appHost", "127.0.0.1")
 _c.set("appPort", 4000)
