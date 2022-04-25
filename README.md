@@ -14,7 +14,8 @@ _c.load(`${Deno.cwd()}/src/config/config.json`)
 
 # Set
 insert or update data in json file
-maximum keys object 4
+Maximum sub keys object 2br>
+Maximum arrays and objects within an array 1
 ```typescript
 _c.set("appHost", "127.0.0.1")
 _c.set("appPort", 4000)
@@ -45,7 +46,7 @@ console.log(_c.get("appTitle", "Other value optional if not exist"))
 console.log(_c.get("otherKey", "Other value optional if not exist"))
 ```
 # Return
-Kjsh<br/>
+Kjsh<br>
 Other title optional if not exist"
 
 # Delete
