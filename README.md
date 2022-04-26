@@ -13,9 +13,9 @@ _c.load(`${Deno.cwd()}/src/config/config.json`)
 ```
 
 # Set
-insert or update data in json file
-Maximum sub keys object 2br>
-Maximum arrays and objects within an array 1
+insert or update data in file json file<br>
+Maximum sub keys object <br>
+Maximum arrays and objects within an array 1<br>
 IMPORTANT: do not manually edit the file json use set
 ```typescript
 _c.set("keyString", "string")
