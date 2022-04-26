@@ -52,5 +52,11 @@ Other title optional if not exist"
 # Delete
 Delete key if exist
 ```typescript
-_c.delete("appTitle")
+_c.delete("key")
+_c.delete("keyObject.subKey")
+_c.delete("keyObject.subKeyObject")
+_c.delete("keyObject.subKeyArray")
+_c.delete("keyObject.subKeyArray[0]subKey")
 ```
+# Return
+Delete key subKeys object subObjects array subArrays
