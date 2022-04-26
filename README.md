@@ -1,4 +1,4 @@
-# JsonFileChange v1.0.0
+# json_file_change v1.0.0
 Module for deno, load, set, get and delete content of json file
 
 # Import
