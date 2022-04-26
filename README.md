@@ -17,24 +17,74 @@ insert or update data in json file
 Maximum sub keys object 2br>
 Maximum arrays and objects within an array 1
 ```typescript
-_c.set("appHost", "127.0.0.1")
-_c.set("appPort", 4000)
-_c.set("secure", true)
-_c.set("db", {
-  "type":"gestor_db",
-  "host":"127.0.0.1" 
+_c.set("keyString", "string")
+_c.set("keyNumber", 1)
+_c.set("keyBoolean", true)
+_c.set("keyObject", {
+	"subKeyString": "string",
+	"subKeyNumber": 1,
+	"subKeyBoolean": true,
+	"subKeyArray": [
+		{
+			"subKeyString": "string",
+			"subKeyNumber": 1,
+			"subKeyBoolean": false,
+			"subKeyObject": {
+				"subKeyString": "string",
+				"subKeyNumber": 1,
+				"subKeyBoolean": true,
+			}
+		}
+	],
+	"subKeyObject": {
+		"subKeyString": "string",
+		"subKeyNumber": 1,
+		"subKeyBoolean": true,
+		"subKeyArray": [
+			{
+				"subKeyString": "string",
+				"subKeyNumber": 1,
+				"subKeyBoolean": false,
+			}
+		],
+	}
 })
+
 ```
 # Return
-```typescript
+```json
 {
-	"appTitle": "Kjsh",
-	"appHost": "127.0.0.1",
-	"appPort": 4000,
-	"secure": true,
-	"db": {
-		"type": "gestor_db",
-		"host": "127.0.0.1"
+	"keyString": "string",
+	"keyNumber": 1,
+	"keyBoolean": true,
+	"keyObject": {
+		"subKeyString": "string",
+		"subKeyNumber": 1,
+		"subKeyBoolean": true,
+		"subKeyArray": [
+			{
+				"subKeyString": "string",
+				"subKeyNumber": 1,
+				"subKeyBoolean": false,
+				"subKeyObject": {
+					"subKeyString": "string",
+					"subKeyNumber": 1,
+					"subKeyBoolean": true
+				}
+			}
+		],
+		"subKeyObject": {
+			"subKeyString": "string",
+			"subKeyNumber": 1,
+			"subKeyBoolean": true,
+			"subKeyArray": [
+				{
+					"subKeyString": "string",
+					"subKeyNumber": 1,
+					"subKeyBoolean": false
+				}
+			]
+		}
 	}
 }
 ```
@@ -52,11 +102,30 @@ Other title optional if not exist"
 # Delete
 Delete key if exist
 ```typescript
-_c.delete("key")
-_c.delete("keyObject.subKey")
-_c.delete("keyObject.subKeyObject")
+_c.delete("keyString") // :heavy_check_mark:
+_c.delete("keyNumber")
+_c.delete("keyBoolean")
+_c.delete("keyObject")
+_c.delete("keyObject.subKeyString")
+_c.delete("keyObject.subKeyNumber")
+_c.delete("keyObject.subKeyBoolean")
 _c.delete("keyObject.subKeyArray")
-_c.delete("keyObject.subKeyArray[0]subKey")
+_c.delete("keyObject.subKeyArray[0].subKeyString")
+_c.delete("keyObject.subKeyArray[0].subKeyNumber")
+_c.delete("keyObject.subKeyArray[0].subKeyBoolean")
+_c.delete("keyObject.subKeyArray[0].subKeyObject")
+_c.delete("keyObject.subKeyArray[0].subKeyObject.subKeyString")
+_c.delete("keyObject.subKeyArray[0].subKeyObject.subKeyNumber")
+_c.delete("keyObject.subKeyArray[0].subKeyObject.subKeyBoolean")
+_c.delete("keyObject.subKeyObject")
+_c.delete("keyObject.subKeyObject.subKeyString")
+_c.delete("keyObject.subKeyObject.subKeyNumber")
+_c.delete("keyObject.subKeyObject.subKeyBoolean")
+_c.delete("keyObject.subKeyObject.subKeyArray")
+_c.delete("keyObject.subKeyObject.subKeyArray[0].subKeyString")
+_c.delete("keyObject.subKeyObject.subKeyArray[0].subKeyNumber")
+_c.delete("keyObject.subKeyObject.subKeyArray[0].subKeyBoolean")
+_c.delete("keyObject.subKeyArray[0]") 
 ```
 # Return
 Delete key subKeys object subObjects array subArrays
