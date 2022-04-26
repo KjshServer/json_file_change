@@ -3,7 +3,7 @@ Module for deno, load, set, get and delete content of json file
 
 # Import
 ```typescript
-import { _c } from "https://deno.land/x/json_file_change@1.0.0/mod.ts"
+import { _c } from "https://deno.land/x/json_file_change@v1.0.0/mod.ts"
 ```
 
 # Load
