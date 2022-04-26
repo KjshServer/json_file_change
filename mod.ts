@@ -2,6 +2,7 @@
 
 let fileConfig = globalThis as any
 
+// module for Deno
 export const _c = {
 	load: (path: string) => {
 		fileConfig = path.replaceAll("\\", "/")
