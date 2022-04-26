@@ -92,17 +92,43 @@ _c.set("keyObject", {
 # Get
 Get key if it exists and if it doesn't exist, optional you can return a temporary value
 ```typescript
-console.log(_c.get("appTitle", "Other value optional if not exist"))
-console.log(_c.get("otherKey", "Other value optional if not exist"))
+console.log(_c.get("keyString", "Other value optional if not exist")) // "string"
+console.log(_c.get("keyNumber", "Other value optional if not exist")) // 1
+console.log(_c.get("keyBoolean", "Other value optional if not exist")) // true
+console.log(_c.get("keyObject", "Other value optional if not exist")) // object{}
+console.log(_c.get("keyObject.subKeyString", "Other value optional if not exist")) // "string"
+console.log(_c.get("keyObject.subKeyNumber", "Other value optional if not exist")) // 1
+console.log(_c.get("keyObject.subKeyBoolean", "Other value optional if not exist")) // true
+console.log(_c.get("keyObject.subKeyArray", "Other value optional if not exist")) // array[]
+console.log(_c.get("keyObject.subKeyArray[0].subKeyString", "Other value optional if not exist")) // "string"
+console.log(_c.get("keyObject.subKeyArray[0].subKeyNumber", "Other value optional if not exist")) // 1
+console.log(_c.get("keyObject.subKeyArray[0].subKeyBoolean", "Other value optional if not exist")) // "Other value optional if not exist"
+console.log(_c.get("keyObject.subKeyArray[0].subKeyObject", "Other value optional if not exist")) // object{}
+console.log(_c.get("keyObject.subKeyArray[0].subKeyObject.subKeyString", "Other value optional if not exist")) // "string"
+console.log(_c.get("keyObject.subKeyArray[0].subKeyObject.subKeyNumber", "Other value optional if not exist")) // 1
+console.log(_c.get("keyObject.subKeyArray[0].subKeyObject.subKeyBoolean", "Other value optional if not exist")) // true
+console.log(_c.get("keyObject.subKeyObject", "Other value optional if not exist")) // object{}
+console.log(_c.get("keyObject.subKeyObject.subKeyString", "Other value optional if not exist")) // "string"
+console.log(_c.get("keyObject.subKeyObject.subKeyNumber", "Other value optional if not exist")) // 1
+console.log(_c.get("keyObject.subKeyObject.subKeyBoolean", "Other value optional if not exist")) // true
+console.log(_c.get("keyObject.subKeyObject.subKeyArray", "Other value optional if not exist")) // array[]
+console.log(_c.get("keyObject.subKeyObject.subKeyArray[0].subKeyString", "Other value optional if not exist")) // "string"
+console.log(_c.get("keyObject.subKeyObject.subKeyArray[0].subKeyNumber", "Other value optional if not exist")) // 1
+console.log(_c.get("keyObject.subKeyObject.subKeyArray[0].subKeyBoolean", "Other value optional if not exist")) // "Other value optional if not exist"
+console.log(_c.get("keyObject.subKeyArray[0]", "Other value optional if not exist")) // Other value optional if not exist
+
+console.log(_c.get("keyObject.subKeyObject.subKeyArray[0].subKeyBoolean")) // "" is false
+console.log(_c.get("keyString1", "Other value optional if not exist")) // Other value optional if not exist
+console.log(_c.get("keyString1", "Other value optional if not exist")) // ""
 ```
 # Return
-Kjsh<br>
-Other title optional if not exist"
+if exist return = value<br>
+if not exist or is false return = Other title optional if not exist"
 
 # Delete
 Delete key if exist
 ```typescript
-_c.delete("keyString") // :heavy_check_mark:
+_c.delete("keyString")
 _c.delete("keyNumber")
 _c.delete("keyBoolean")
 _c.delete("keyObject")
@@ -125,7 +151,7 @@ _c.delete("keyObject.subKeyObject.subKeyArray")
 _c.delete("keyObject.subKeyObject.subKeyArray[0].subKeyString")
 _c.delete("keyObject.subKeyObject.subKeyArray[0].subKeyNumber")
 _c.delete("keyObject.subKeyObject.subKeyArray[0].subKeyBoolean")
-_c.delete("keyObject.subKeyArray[0]") 
+_c.delete("keyObject.subKeyArray[0]") // error would be null
 ```
 # Return
 Delete key subKeys object subObjects array subArrays
